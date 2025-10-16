@@ -1,0 +1,38 @@
+# SCons 构建文件
+.sconsign.dblite
+.sconf_temp/
+config.log
+
+# 构建输出目录
+build/
+output/
+
+# 可执行文件
+CirAni
+*.exe
+
+# 目标文件
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+
+# 调试文件
+*.dSYM/
+*.pdb
+
+# 编辑器和 IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 临时文件
+*.tmp
+*.bak
+*.log
