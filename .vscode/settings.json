@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/tools/scripts"
+    ],
+    "python.analysis.diagnosticMode": "workspace"
+}

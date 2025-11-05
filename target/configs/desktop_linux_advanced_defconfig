@@ -1,0 +1,44 @@
+# CirAni 项目配置文件
+# 桌面 Linux 平台 - 高级特效示例
+
+# ====== 项目信息 ======
+CONFIG_PRJ_DEFCONFIG_FILENAME="desktop_linux_advanced_defconfig"
+CONFIG_PRJ_TARGET="desktop_linux"
+CONFIG_PRJ_APP="advanced_effects"
+CONFIG_PRJ_DESCRIPTION="Linux平台高级特效演示"
+
+# ====== Raylib 模块配置 ======
+CONFIG_RAYLIB_SUPPORT_MODULE_RTEXT=y
+CONFIG_RAYLIB_SUPPORT_MODULE_RSHAPES=y
+CONFIG_RAYLIB_SUPPORT_MODULE_RTEXTURES=y
+CONFIG_RAYLIB_SUPPORT_MODULE_RAUDIO=y
+CONFIG_RAYLIB_SUPPORT_MODULE_RMODELS=y
+
+# ====== 编译选项 ======
+CONFIG_DEBUG_MODE=n
+CONFIG_OPTIMIZATION_LEVEL="-O3"
+CONFIG_COMPILER_FLAGS="-Wall -Wextra -march=native"
+
+# ====== 窗口配置 ======
+CONFIG_SCREEN_WIDTH=1920
+CONFIG_SCREEN_HEIGHT=1080
+CONFIG_SCREEN_TITLE="CirAni - 高级特效"
+CONFIG_SCREEN_FPS=120
+
+# ====== 资源路径 ======
+CONFIG_RESOURCE_PATH="resources/"
+CONFIG_FONT_PATH="resources/fonts/"
+CONFIG_IMAGE_PATH="resources/images/"
+CONFIG_SHADER_PATH="resources/shaders/"
+
+# ====== 功能开关 ======
+CONFIG_ENABLE_VSYNC=n
+CONFIG_ENABLE_MSAA=y
+CONFIG_MSAA_SAMPLES=8
+CONFIG_ENABLE_RESIZABLE_WINDOW=y
+CONFIG_ENABLE_FULLSCREEN=n
+CONFIG_ENABLE_SHADER_EFFECTS=y
+
+# ====== 输出配置 ======
+CONFIG_OUTPUT_DIR="output/desktop_linux_advanced/bin/"
+CONFIG_LOG_LEVEL="WARNING"

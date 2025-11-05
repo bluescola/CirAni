@@ -6,6 +6,8 @@
 import os
 import sys
 
+# ====================1.颜色和日志函数====================
+
 # ANSI 颜色代码 (前景色 - 字体颜色)
 COLOR_BEGIN = "\033["
 COLOR_RED = COLOR_BEGIN + "31m"      # 红色字
@@ -34,6 +36,7 @@ def pr_raw(string):
     """打印原始信息(白色字体)"""
     print(COLOR_WHITE + '--- ' + string + COLOR_END)
 
+# ==================== 2. 配置文件操作函数 ====================
 
 def chk_prj_config(root):
     """
@@ -44,8 +47,7 @@ def chk_prj_config(root):
     """
     config_file = os.path.join(root, '.config')
     if not os.path.exists(config_file):
-        pr_warn(f"配置文件 {config_file} 不存在")
-        pr_info("使用默认配置")
+        pr_warn(f"配置文件 {config_file} 不存在,请lunch选择配置")
         return False
     return True
 
@@ -117,10 +119,21 @@ def get_config_value(config_file, key):
 
     return None
 
+# ==================== 3. 配置管理核心函数 ====================
+
+def get_all_config(root):
+    configs_path = os.path.join(root,"target/configs")
+    configs = os.listdir(configs_path)
+    for filename in configs:
+        pr_raw(filename)
+    
+
+# ==================== 4. 辅助工具函数 ====================
+
 def append_path_if_exists(path_or_file,path_info):
     '''
-    文件直接添加父目录到sys.path
-    路径添加到sys.path
+    文件添加父目录到sys.path
+    路径直接添加到sys.path
     '''
     if not os.path.exists(path_or_file):
         pr_warn(f"{path_or_file}不存在")
@@ -138,6 +151,7 @@ def append_path_if_exists(path_or_file,path_info):
     sys.path.append(target_path)
     return True
 
+# ==================== 5. 函数别名 ====================
 
 # 函数别名(简写)
 pe = pr_err   # error
@@ -145,6 +159,7 @@ pw = pr_warn  # warning
 pi = pr_info  # info
 pr = pr_raw   # raw
 
+# ==================== 6. 测试代码 ====================
 
 if __name__ == '__main__':
     # 测试代码
@@ -156,6 +171,9 @@ if __name__ == '__main__':
 
     pr_info("检查项目配置...")
     chk_prj_config(root)
+
+    pr_info("获取所有配置")
+    get_all_config(root)
 
     pr_info("读取项目配置...")
     target, app = get_prj_config(root)

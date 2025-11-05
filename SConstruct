@@ -17,8 +17,14 @@ else:
 
 from cirani_build import *      #导入cirani_build.py所有函数
 
+
 # 读取项目配置
-PRJ_TARGET = os.path.join(CIRANI_ROOT,"target/configs")
-append_path_if_exists(PRJ_TARGET,"项目配置路径")
+if not chk_prj_config(CIRANI_ROOT):
+        Exit(1)
+else:
+        PRJ_TARGET,PRJ_APP  = get_prj_config(CIRANI_ROOT)
+        pr_info(f"PRJ_TARGET:{PRJ_TARGET}")
+        pr_info(f"PRJ_APP:{PRJ_APP}")
+
 
 

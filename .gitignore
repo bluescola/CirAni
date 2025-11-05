@@ -25,7 +25,11 @@ CirAni
 *.pdb
 
 # 编辑器和 IDE
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
 .idea/
 *.swp
 *.swo
@@ -36,3 +40,8 @@ CirAni
 *.tmp
 *.bak
 *.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

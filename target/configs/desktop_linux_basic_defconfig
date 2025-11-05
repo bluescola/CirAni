@@ -1,0 +1,41 @@
+# CirAni 项目配置文件
+# 桌面 Linux 平台 - 基础电路动画示例
+
+# ====== 项目信息 ======
+CONFIG_PRJ_DEFCONFIG_FILENAME="desktop_linux_basic_defconfig"
+CONFIG_PRJ_TARGET="desktop_linux"
+CONFIG_PRJ_APP="basic_circuit"
+CONFIG_PRJ_DESCRIPTION="Linux平台基础电路动画演示"
+
+# ====== Raylib 模块配置 ======
+CONFIG_RAYLIB_SUPPORT_MODULE_RTEXT=y
+CONFIG_RAYLIB_SUPPORT_MODULE_RSHAPES=y
+CONFIG_RAYLIB_SUPPORT_MODULE_RTEXTURES=y
+CONFIG_RAYLIB_SUPPORT_MODULE_RAUDIO=y
+
+# ====== 编译选项 ======
+CONFIG_DEBUG_MODE=y
+CONFIG_OPTIMIZATION_LEVEL="-O2"
+CONFIG_COMPILER_FLAGS="-Wall -Wextra"
+
+# ====== 窗口配置 ======
+CONFIG_SCREEN_WIDTH=800
+CONFIG_SCREEN_HEIGHT=600
+CONFIG_SCREEN_TITLE="CirAni - 基础电路动画"
+CONFIG_SCREEN_FPS=60
+
+# ====== 资源路径 ======
+CONFIG_RESOURCE_PATH="resources/"
+CONFIG_FONT_PATH="resources/fonts/"
+CONFIG_IMAGE_PATH="resources/images/"
+
+# ====== 功能开关 ======
+CONFIG_ENABLE_VSYNC=y
+CONFIG_ENABLE_MSAA=y
+CONFIG_MSAA_SAMPLES=4
+CONFIG_ENABLE_RESIZABLE_WINDOW=n
+CONFIG_ENABLE_FULLSCREEN=n
+
+# ====== 输出配置 ======
+CONFIG_OUTPUT_DIR="output/desktop_linux_basic/bin/"
+CONFIG_LOG_LEVEL="INFO"
